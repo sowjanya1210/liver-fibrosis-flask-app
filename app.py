@@ -83,7 +83,7 @@ def predict():
 
 @app.route('/download')
 def download_file():
-    file_path = r"static\understanding-your-fibroscan-results.pdf"  # Path to your file
+    file_path = r"static/understanding-your-fibroscan-results.pdf"  # Path to your file
     return send_file(file_path, as_attachment=True)
 
 if __name__ == '__main__':
