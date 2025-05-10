@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Liver Fibrosis Stages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #133337;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-weight: bold;
+            color: white;
+        }
+        .fibrosis-stages {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .stage {
+            width: 250px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        .stage:hover {
+            background: #fafbf5; 
+            transform: scale(1.05); /* Slightly increase size */
+            box-shadow: 0 0 15px rgba(228, 228, 221, 0.5); 
+        }
+        
+        .stage img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .stage h3 {
+            margin-top: 10px;
+            font-size: 20px;
+        }
+        .stage p {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1><b>Explore Liver Fibrosis Stages</b></h1>
+    <div class="fibrosis-stages">
+        <div class="stage">
+            <img src="{{ url_for('static', filename='images/f0.png') }}" alt="Stage F0 - Healthy Liver">
+            <h3>Stage F0: No Fibrosis</h3>
+            <p>The liver is healthy with no scarring.</p>
+        </div>
+        <div class="stage">
+            <img src="{{ url_for('static', filename='images/f1.png') }}" alt="Stage F1 - Mild Fibrosis">
+            <h3>Stage F1: Mild Fibrosis</h3>
+            <p>Minimal scarring with no significant damage.</p>
+        </div>
+        <div class="stage">
+            <img src="{{ url_for('static', filename='images/f2.png') }}" alt="Stage F2 - Moderate Fibrosis">
+            <h3>Stage F2: Moderate Fibrosis</h3>
+            <p>Increased fibrosis, but the liver still functions well.</p>
+        </div>
+        <div class="stage">
+            <img src="{{ url_for('static', filename='images/f3.png') }}" alt="Stage F3 - Severe Fibrosis">
+            <h3>Stage F3: Severe Fibrosis</h3>
+            <p>Extensive scarring; high risk of liver failure.</p>
+        </div>
+        <div class="stage">
+            <img src="{{ url_for('static', filename='images/f4.png') }}" alt="Stage F4 - Cirrhosis">
+            <h3>Stage F4: Cirrhosis</h3>
+            <p>Severe liver damage, leading to possible liver failure.</p>
+        </div>
+    </div>
+</body>
+</html>

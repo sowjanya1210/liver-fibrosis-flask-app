@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LiverGuard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            background: #133337;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        
+        /* Team Profiles Section */
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .team-member {
+            width: 250px;
+            background: white;
+            color: black;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .team-member:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+        .team-member img {
+            width: 130px;
+            height: 130px;
+            border-radius: 100%;
+            object-fit: fill;
+            margin-bottom: 10px;
+        }
+        .team-member h3 {
+            margin: 10px 0 5px;
+        }
+        .team-member p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .team-member a {
+            display: inline-block;
+            color: rgb(0, 192, 226);
+            text-decoration: none;
+            margin-top: 5px;
+        }
+        .team-member a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Form */
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: rgb(0, 192, 226);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Team Profiles Section -->
+    <h2>Contact Our Team</h2>
+    <div class="team">
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='images/Picture4.png') }}" alt="Team Member 1">
+            <h3>B. Saadhana</h3>
+            <p>📞 +91 7680061395</p>
+            <p>✉️ 21131a4403@gvpce.ac.in</p>
+            <a href="https://www.linkedin.com/in/member1" target="_blank">LinkedIn Profile</a>
+        </div>
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='images/Picture5.jpg') }}" alt="Team Member 2">
+            <h3>B. RamCharani</h3>
+            <p>📞 +91 7396881575</p>
+            <p>✉️ 21131a4412@gvpce.ac.in</p>
+            <a href="https://www.linkedin.com/in/ramcharani-boddepalli-280a15252" target="_blank">LinkedIn Profile</a>
+        </div>
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='images/Picture2.jpg') }}" alt="Team Member 3">
+            <h3>J. Lakshmi Sowjanya</h3>
+            <p>📞 +91 8331966560</p>
+            <p>✉️ 21131a4416@gvpce.ac.in</p>
+            <a href="https://www.linkedin.com/in/sowjanya-jeeru-5140b7275/" target="_blank">LinkedIn Profile</a>
+        </div>
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='images/Picture1.jpg') }}" alt="Team Member 4">
+            <h3>S. Sirisha</h3>
+            <p>📞 +91 7095159548</p>
+            <p>✉️ 22135A4406@gvpce.ac.in</p>
+            <a href="https://www.linkedin.com/in/suggi-sirisha" target="_blank">LinkedIn Profile</a>
+        </div>
+    </div>
+
+</body>
+</html>

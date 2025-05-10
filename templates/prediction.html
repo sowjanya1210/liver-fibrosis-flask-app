@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Fibrosis Stage Prediction</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+        
+
+        <script>
+            function previewImage(event) {
+                var reader = new FileReader();
+                reader.onload = function(){
+                    var output = document.getElementById('preview-image');
+                    output.src = reader.result;
+                    document.getElementById('preview-container').style.display = 'block';
+                };
+                reader.readAsDataURL(event.target.files[0]);
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <h1 class="logo"><b>LiverGuard</b></h1>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('prediction') }}">FibroScan</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <h1 class="title">Liver Fibrosis <span>Stage Prediction</span></h1>
+
+            <form id="upload-form" action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+                <label for="imageInput" class="custom-file-upload">Choose Image</label>
+                <input type="file" id="imageInput" name="image" accept=".jpg, .png, .jpeg" onchange="previewImage(event)" required>
+                <button type="submit">Predict</button>
+            </form>
+
+            <div id="preview-container" style="display: none;">
+                <h2>Uploaded Image:</h2>
+                <img id="preview-image" src="" alt="Uploaded Image">
+            </div>
+
+            <div id="result">
+                {% if error %}
+                    <p class="error">{{ error }}</p>
+                {% endif %}
+
+                {% if fibrosis_stage %}
+                    <h2>Predicted Stage: <span class="stage">{{ fibrosis_stage }}</span></h2>
+                    <p>📄Download Detailed Report: 
+                        <a href="{{ url_for('download_file') }}"> Download PDF</a>
+                    </p>
+
+                    <h3>📌Related Links:</h3>
+                    <ul>
+                        {% for link in reference_links %}
+                            <li><a href="{{ link.url }}" target="_blank">{{ link.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+
+        
+    </body>
+</html>

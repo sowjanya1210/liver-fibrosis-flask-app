@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Liver Fibrosis Diagnosis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #133337;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-weight: bold;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+        .info {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .images img {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .images img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <h1>About Liver Guard</h1>
+    <div class="container">
+        <p class="info"><strong>📂Dataset:</strong> liver-histopathology-fibrosis-ultrasound-images</p>
+        <p class="info"><strong>✨Description:</strong>Our AI-powered Liver Fibrosis Stage Prediction system leverages Variational Autoencoders (VAE) with Convolutional Neural Networks (CNNs) to analyze liver ultrasound images and classify fibrosis stages with high accuracy. The model has been trained using Federated Learning (FL), ensuring data privacy and security while maintaining high performance.To further enhance security, we implement AES (Advanced Encryption Standard) encryption, preventing unauthorized access to transmitted model updates. AES-256 encryption ensures confidentiality, integrity, and tamper-proof communication, making it a robust choice for protecting medical AI models.</p>
+        <p class="info"><strong>📈Global Model Accuracy:</strong> 95.14%</p>
+        <p class="info"><strong>📉Global Model Loss:</strong> 0.2153</p>
+        <p class="info"><strong>🎯Global Model Dice Coefficient:</strong> 0.9316</p>
+        
+        <div class="images">
+            <h2>Model Performance Metrics</h2>
+            <img src="{{ url_for('static', filename='images/accuracy_chart.png') }}" alt="Accuracy over Rounds & Epochs">
+            <img src="{{ url_for('static', filename='images/loss_chart.png') }}" alt="Loss over Rounds & Epochs">
+            <img src="{{ url_for('static', filename='images/dice_coefficient_chart.png') }}" alt="Dice Coefficient over Rounds & Epochs">
+        </div>
+    </div>
+</body>
+</html>
